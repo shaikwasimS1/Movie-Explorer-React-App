@@ -1,11 +1,11 @@
 import "./App.css"
 import {BrowserRouter as Router ,Routes,Route} from "react-router-dom"
 import Navbar from "./components/Navbar"
-import Home from "./components/pages/Home/Home"
+import Home from "./components/pages/home/Home"
 import Movies from "./components/pages/movies/Movies"
-import Horror from "./components/pages/Horror/Horror"
+import Horror from "./components/pages/horror/Horror"
 import NotFound from "./components/pages/notFound/NotFound"
-Horror
+
 
 const App = () => {
   return (
