@@ -8,7 +8,7 @@ const Horror = () => {
   const [SearchParams] = useSearchParams()
   const query = SearchParams.get("query") || "Horror"
 
-  const [movies, setMovies] = useState(["movie"])
+  const [movies, setMovies] = useState([])
 
   useEffect(() => {
 
@@ -34,7 +34,7 @@ const Horror = () => {
     <>
       <div className="Movies">
         <div className="hero-image my-5">
-          {movies.length > 0 && (
+          {movies.length > 0 && movies[0].backdrop_path &&  (
             <div
               className="movie-title p-5"
               style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${movies[0].backdrop_path})` }}
@@ -55,13 +55,13 @@ const Horror = () => {
 
           <div className="row p-5">
             {movies.map((movie) => (
-              <div className="col-lg-3 text-center  text-lg-start">
+              <div className="col-lg-3 text-center  text-lg-start"  key={movie.id}>
 
                 <div className="card">
                   <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className="card-img-top" alt="movie" width="18rem" />
                   <div className="card-body">
                     <h5 className="card-title">{movie.title}</h5>
-                    <p className="card-text">{movie.overview}</p>
+                    <p className="card-text">{movie.overview}...</p>
                     <p>Relase Date: {movie.release_date}</p>
                   </div>
                 </div>
